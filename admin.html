@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Nestora Realty Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body">
+  <main class="admin-shell container">
+    <a class="brand admin-brand" href="index.html">
+      <span class="brand-badge">N</span>
+      <span class="brand-copy"><strong>Nestora</strong><small>Admin Console</small></span>
+    </a>
+
+    <section class="admin-login" data-admin-login>
+      <p class="section-tag">Secure Access</p>
+      <h1>Admin sign in</h1>
+      <p>Use the email and password of the Supabase user who manages this website.</p>
+      <form class="admin-form" data-login-form>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+        <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+        <button class="button button-solid" type="submit">Sign in</button>
+        <p class="form-note" data-login-note aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="admin-dashboard" data-admin-dashboard hidden>
+      <div class="admin-heading">
+        <div><p class="section-tag">Property Management</p><h1>Listings and inquiries</h1></div>
+        <button class="button button-outline-dark" type="button" data-sign-out>Sign out</button>
+      </div>
+
+      <div class="admin-grid">
+        <form class="admin-form panel-card" data-property-form>
+          <h2>Add a property</h2>
+          <label>Title<input type="text" name="title" required></label>
+          <label>Slug<input type="text" name="slug" placeholder="seabrook-contemporary" required></label>
+          <label>Location<input type="text" name="location" required></label>
+          <label>Price<input type="number" name="price" min="0" required></label>
+          <label>Bedrooms<input type="number" name="bedrooms" min="0" required></label>
+          <label>Bathrooms<input type="number" name="bathrooms" min="0" required></label>
+          <label>Area (sq ft)<input type="number" name="area_sqft" min="0" required></label>
+          <label>Property type<select name="property_type"><option value="family">Family Home</option><option value="apartment">Apartment</option><option value="waterfront">Waterfront</option><option value="investment">Investment</option><option value="luxury">Luxury</option></select></label>
+          <label class="admin-full">Image URL<input type="url" name="image_url" required></label>
+          <label class="admin-full">Description<textarea name="description" rows="4" required></textarea></label>
+          <label class="check-row"><input type="checkbox" name="featured"> Featured listing</label>
+          <button class="button button-solid" type="submit">Publish property</button>
+          <p class="form-note" data-property-note aria-live="polite"></p>
+        </form>
+
+        <div class="admin-data panel-card">
+          <h2>Recent inquiries</h2>
+          <div data-inquiry-list class="admin-list"></div>
+        </div>
+      </div>
+
+      <section class="panel-card admin-properties">
+        <h2>Manage listings</h2>
+        <div data-admin-properties class="admin-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
