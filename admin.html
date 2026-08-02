@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin | Nestora Realty Advisory</title>
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="admin-body">
   <main class="admin-shell container">
     <a class="brand admin-brand" href="index.html">
@@ -30,8 +35,35 @@
 
     <section class="admin-dashboard" data-admin-dashboard hidden>
       <div class="admin-heading">
-        <div><p class="section-tag">Property Management</p><h1>Listings and inquiries</h1></div>
+        <div>
+          <p class="section-tag">Property Management</p>
+          <h1>Listings and inquiries</h1>
+        </div>
+
         <button class="button button-outline-dark" type="button" data-sign-out>Sign out</button>
+      </div>
+      <div class="admin-stats">
+
+        <article class="admin-stat-card">
+          <span>Total Properties</span>
+          <strong data-stat-total>0</strong>
+        </article>
+
+        <article class="admin-stat-card">
+          <span>Available</span>
+          <strong data-stat-available>0</strong>
+        </article>
+
+        <article class="admin-stat-card">
+          <span>Sold</span>
+          <strong data-stat-sold>0</strong>
+        </article>
+
+        <article class="admin-stat-card">
+          <span>New Inquiries</span>
+          <strong data-stat-inquiries>0</strong>
+        </article>
+
       </div>
 
       <div class="admin-grid">
@@ -44,8 +76,28 @@
           <label>Bedrooms<input type="number" name="bedrooms" min="0" required></label>
           <label>Bathrooms<input type="number" name="bathrooms" min="0" required></label>
           <label>Area (sq ft)<input type="number" name="area_sqft" min="0" required></label>
-          <label>Property type<select name="property_type"><option value="family">Family Home</option><option value="apartment">Apartment</option><option value="waterfront">Waterfront</option><option value="investment">Investment</option><option value="luxury">Luxury</option></select></label>
+          <label>Property type<select name="property_type">
+              <option value="family">Family Home</option>
+              <option value="apartment">Apartment</option>
+              <option value="waterfront">Waterfront</option>
+              <option value="investment">Investment</option>
+              <option value="luxury">Luxury</option>
+            </select></label>
           <label class="admin-full">Image URL<input type="url" name="image_url" required></label>
+          <label class="admin-full">
+            Gallery Image 1
+            <input type="url" name="gallery_image_1" placeholder="https://example.com/property-image-1.jpg">
+          </label>
+
+          <label class="admin-full">
+            Gallery Image 2
+            <input type="url" name="gallery_image_2" placeholder="https://example.com/property-image-2.jpg">
+          </label>
+
+          <label class="admin-full">
+            Gallery Image 3
+            <input type="url" name="gallery_image_3" placeholder="https://example.com/property-image-3.jpg">
+          </label>
           <label class="admin-full">Description<textarea name="description" rows="4" required></textarea></label>
           <label class="check-row"><input type="checkbox" name="featured"> Featured listing</label>
           <button class="button button-solid" type="submit">Publish property</button>
@@ -69,4 +121,5 @@
   <script src="supabase-config.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
